@@ -31,11 +31,13 @@ export class SessionListingComponent implements OnInit {
     this.appService.getEventsInfo(this.id).subscribe(
       data => {
         this.fakeResponse = data;
-        this.fakeResponse.sessions.sort(this.orderByDate);
-        this.fakeResponse.sessions.forEach(ele => {
-          ele.buyTicket = 0;
-          ele.date = new Date(parseInt(ele.date)).toLocaleDateString("en-GB");
-        });
+        if (this.fakeResponse.sessions) {
+          this.fakeResponse.sessions.sort(this.orderByDate);
+          this.fakeResponse.sessions.forEach(ele => {
+            ele.buyTicket = 0;
+            ele.date = new Date(parseInt(ele.date)).toLocaleDateString("en-GB");
+          });
+        }
       },
       err => {
         this.isEmptyBBDD = true;

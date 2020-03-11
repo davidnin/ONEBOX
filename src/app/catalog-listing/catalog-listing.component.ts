@@ -14,10 +14,7 @@ export class CatalogListingComponent implements OnInit {
   ngOnInit(): void {
     this.appService.setTitle(this.title);
     this.appService.getEvents().subscribe((data: Object) => {
-      console.log("data", data);
-
       this.fakeBBDD = data;
-
       this.fakeBBDD.sort(this.orderByDate);
       this.fakeBBDD.forEach(ele => {
         ele.startDate = new Date(parseInt(ele.startDate)).toLocaleDateString(
