@@ -18,11 +18,15 @@
           </p>
         </div>
 
-        <button href="#" class="btn btn-primary mt-auto link-button">
-          <a [routerLink]="['/session']" [queryParams]="{ id: data.id }"
-            >Comprar</a
-          >
-        </button>
+        <a
+          class="reference-button btn btn-primary mt-auto link-button"
+          [routerLink]="['/session']"
+          [queryParams]="{ id: data.id }"
+        >
+          <button class="click-button">
+            Comprar
+          </button>
+        </a>
       </div>
     </div>
   </div>

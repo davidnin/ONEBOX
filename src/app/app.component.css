@@ -7,3 +7,11 @@
   background-color: #87ceeb;
   display: inline !important;
 }
+
+.shadow {
+  box-shadow: 0 45px 20px rgba(0, 0, 0, 4) !important;
+}
+
+.mb-5 {
+  margin-bottom: 70px !important;
+}

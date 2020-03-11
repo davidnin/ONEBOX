@@ -8,7 +8,7 @@ import { AppService } from "../app.service";
 })
 export class CatalogListingComponent implements OnInit {
   fakeBBDD: any;
-  public title: string = "catalog";
+  public title: string = "Catalog";
   constructor(private appService: AppService) {}
 
   ngOnInit(): void {
