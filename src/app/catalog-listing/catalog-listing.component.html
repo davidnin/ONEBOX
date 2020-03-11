@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div
+      class="col-sm-6 d-flex align-items-stretch"
+      id="padding-bottom"
+      *ngFor="let data of fakeBBDD"
+    >
+      <div class="card">
+        <div class="card-header no-color-background">
+          <h5 class="card-title header">{{ data.title }}</h5>
+          <p class="card-text header">{{ data.subtitle }}</p>
+        </div>
+        <img class="card-img" src="{{ data.image }}" alt="Card image cap" />
+        <div class="card-body flex-column">
+          <p class="card-text">{{ data.startDate }} - {{ data.endDate }}</p>
+          <p class="card-text ocultar-div">
+            {{ data.description }}
+          </p>
+        </div>
+
+        <button href="#" class="btn btn-primary mt-auto link-button">
+          <a [routerLink]="['/session']" [queryParams]="{ id: data.id }"
+            >Comprar</a
+          >
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

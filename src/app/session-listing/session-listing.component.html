@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row return-button">
+    <a (click)="onclick()">
+      Volver
+    </a>
+  </div>
+  <div class="row clear-float">
+    <div
+      class="col-sm-6 d-flex align-items-stretch session-listing border-session-listing"
+    >
+      <ul>
+        <li *ngFor="let data of fakeResponse.sessions">
+          Fecha: {{ data.date }}, Disponibilidad: {{ data.availability }}
+          <div class="tickets">
+            <button (click)="restOneTicket(data.date)">
+              <i class="fa fa-plus"></i>
+            </button>
+            {{ data.buyTicket }}
+            <button (click)="addOneTicket(data.date)">
+              <i class="fa fa-plus"></i>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-sm-6 session-listing shopping-cart">
+      <h5 class="card-title header">{{ fakeResponse.event.title }}</h5>
+      <ul>
+        <li *ngFor="let data of fakeResponse.sessions">
+          <div *ngIf="data.buyTicket !== 0">
+            {{ data.date }}
+            <div class="shopping-ticket">
+              x{{ data.buyTicket }}
+              <button (click)="restOneTicket(data.date)">
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.header {
+  color: #007bff;
+}
+
+.no-color-background {
+  background-color: white;
+}
+
+#padding-bottom {
+  padding-bottom: 3%;
+}
+
+.link-button {
+  padding: 2%;
+}
+
+@media screen and (max-width: 600px) {
+  .ocultar-div {
+    display: none;
+  }
+}

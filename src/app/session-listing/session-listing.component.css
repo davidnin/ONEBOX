@@ -1,0 +1,45 @@
+.return-button {
+  float: right;
+}
+.return-button a {
+  cursor: pointer;
+  color: #007bff;
+}
+
+.clear-float {
+  clear: both;
+  padding-top: 50px;
+}
+
+.session-listing {
+  padding: 5px;
+}
+
+.border-session-listing {
+  border: 1px solid black;
+}
+
+.session-listing ul {
+  list-style-type: none;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.session-listing li {
+  padding: 5px;
+}
+
+.tickets {
+  margin-left: 200px;
+  display: inline-block;
+}
+
+.shopping-cart {
+  padding-left: 50px;
+}
+
+.shopping-ticket {
+  margin-left: 360px;
+  display: inline-block;
+}

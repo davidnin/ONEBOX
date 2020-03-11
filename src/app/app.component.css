@@ -1,0 +1,9 @@
+.header p {
+  text-align: center;
+  margin-top: 1%;
+}
+
+.navbar {
+  background-color: #87ceeb;
+  display: inline !important;
+}
