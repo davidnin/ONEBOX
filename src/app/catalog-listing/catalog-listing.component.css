@@ -1,20 +1,11 @@
 .header {
   color: #007bff;
+  cursor: pointer;
 }
 
 .reference-button {
   color: white;
   text-decoration: none;
-}
-
-.click-button {
-  color: inherit;
-  border: 0;
-  background: none;
-  font: inherit;
-  line-height: normal;
-  padding: 0;
-  overflow: visible;
 }
 
 .no-color-background {

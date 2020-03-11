@@ -40,6 +40,19 @@
 }
 
 .shopping-ticket {
-  margin-left: 360px;
+  margin-left: 340px;
   display: inline-block;
+}
+
+.trash-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.listing-icons {
+  color: #007bff;
+}
+
+.listing-buyTicket {
+  padding: 10px;
 }

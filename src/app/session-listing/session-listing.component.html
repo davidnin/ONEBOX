@@ -4,7 +4,7 @@
       Volver
     </a>
   </div>
-  <div class="row clear-float">
+  <div class="row clear-float" *ngIf="!isEmptyBBDD">
     <div
       class="col-sm-6 d-flex align-items-stretch session-listing border-session-listing"
     >
@@ -12,12 +12,12 @@
         <li *ngFor="let data of fakeResponse.sessions">
           Fecha: {{ data.date }}, Disponibilidad: {{ data.availability }}
           <div class="tickets">
-            <button (click)="restOneTicket(data.date)">
-              <i class="fa fa-plus"></i>
+            <button class="click-button" (click)="restOneTicket(data.date)">
+              <i class="fa fa-minus listing-icons"></i>
             </button>
-            {{ data.buyTicket }}
-            <button (click)="addOneTicket(data.date)">
-              <i class="fa fa-plus"></i>
+            <span class="listing-buyTicket">{{ data.buyTicket }}</span>
+            <button class="click-button" (click)="addOneTicket(data.date)">
+              <i class="fa fa-plus listing-icons"></i>
             </button>
           </div>
         </li>
@@ -32,13 +32,20 @@
             {{ data.date }}
             <div class="shopping-ticket">
               x{{ data.buyTicket }}
-              <button (click)="restOneTicket(data.date)">
-                <i class="fa fa-plus"></i>
+              <button class="click-button" (click)="restOneTicket(data.date)">
+                <img
+                  class="trash-icon"
+                  src="../../assets/img/trash.png"
+                  alt="Trash"
+                />
               </button>
             </div>
           </div>
         </li>
       </ul>
     </div>
+  </div>
+  <div class="row clear-float" *ngIf="isEmptyBBDD">
+    <p>EVENT INFO NOT FOUND</p>
   </div>
 </div>

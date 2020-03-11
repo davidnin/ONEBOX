@@ -7,10 +7,28 @@
     >
       <div class="card">
         <div class="card-header no-color-background">
-          <h5 class="card-title header">{{ data.title }}</h5>
-          <p class="card-text header">{{ data.subtitle }}</p>
+          <h5
+            class="card-title header"
+            [routerLink]="['/session']"
+            [queryParams]="{ id: data.id }"
+          >
+            {{ data.title }}
+          </h5>
+          <p
+            class="card-text header"
+            [routerLink]="['/session']"
+            [queryParams]="{ id: data.id }"
+          >
+            {{ data.subtitle }}
+          </p>
         </div>
-        <img class="card-img" src="{{ data.image }}" alt="Card image cap" />
+        <img
+          class="card-img header"
+          src="{{ data.image }}"
+          alt="Card image cap"
+          [routerLink]="['/session']"
+          [queryParams]="{ id: data.id }"
+        />
         <div class="card-body flex-column">
           <p class="card-text">{{ data.startDate }} - {{ data.endDate }}</p>
           <p class="card-text ocultar-div">

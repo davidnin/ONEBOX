@@ -10,9 +10,10 @@ import { AppService } from "../app.service";
   styleUrls: ["./session-listing.component.css"]
 })
 export class SessionListingComponent implements OnInit {
-  id: number;
-  fakeResponse: any;
-  public title: string = "Sesion";
+  public id: number;
+  public fakeResponse: any;
+  public title: string = "Session";
+  public isEmptyBBDD: boolean = false;
   private sub: any;
 
   constructor(
@@ -27,16 +28,19 @@ export class SessionListingComponent implements OnInit {
       params => (this.id = +params["id"])
     );
 
-    this.appService.getEventsInfo(this.id).subscribe(data => {
-      this.fakeResponse = data;
-      console.log("this.fakeResponse", this.fakeResponse);
-
-      this.fakeResponse.sessions.sort(this.orderByDate);
-      this.fakeResponse.sessions.forEach(ele => {
-        ele.buyTicket = 0;
-        ele.date = new Date(parseInt(ele.date)).toLocaleDateString("en-GB");
-      });
-    });
+    this.appService.getEventsInfo(this.id).subscribe(
+      data => {
+        this.fakeResponse = data;
+        this.fakeResponse.sessions.sort(this.orderByDate);
+        this.fakeResponse.sessions.forEach(ele => {
+          ele.buyTicket = 0;
+          ele.date = new Date(parseInt(ele.date)).toLocaleDateString("en-GB");
+        });
+      },
+      err => {
+        this.isEmptyBBDD = true;
+      }
+    );
   }
 
   onclick() {
@@ -69,7 +73,5 @@ export class SessionListingComponent implements OnInit {
     if (result && result[0].availability > result[0].buyTicket) {
       result[0].buyTicket++;
     }
-
-    console.log("this.fakeResponse", this.fakeResponse);
   }
 }
